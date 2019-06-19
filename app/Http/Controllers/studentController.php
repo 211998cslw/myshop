@@ -43,6 +43,8 @@ class studentController extends Controller
 	public function do_add(Request $request)
 	{
 		$data=$request->all();
+		$path=$data->file('upload')->store('Goods');
+		echo assert('storage'.'/',$path);
 		 $res=DB::table('student')->insert([
 		 'username'=>$data['username'],
 	 	 'sex'=>$data['sex'],

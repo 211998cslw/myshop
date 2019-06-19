@@ -38,7 +38,36 @@ Route::prefix('/user')->group(function(){
     Route::any('loginSave','UserController@loginSave');
     Route::any('saveAdd','UserController@saveAdd');
 });
+            
+// 商品添加
+
+// Route::prefix('/Goods1')->group(function(){
+//     Route::any('index','Goods1Controller@index');
+//     Route::any('add','Goods1Controller@add');
+//     Route::any('gadd','Goods1Controller@gadd');
+//     Route::get('del','Goods1Controller@del');
+// });
+
+Route::middleware('Goods1')->group(function(){
+    Route::get('Goods1/update','Goods1Controller@update');
+    Route::post('Goods1/do_update','Goods1Controller@do_update');
+});
+
+
             /*微商城*/
-// 文件上传
-Route::get('/add','admin\GoodsController@add');
-route::post('/do_add_good','admin\GoodsController@do_add_good');
+// 商品添加
+// Route::prefix('/Goods')->group(function(){
+//     Route::any('goods_add','admin\GoodsController@goods_add');
+//     Route::any('sdo_add','admin\GoodsController@sdo_add');
+    
+// });
+Route::get('/Goods/goods_add','admin\Goods@goods_add');
+Route::post('/Goods/do_add','admin\Goods@do_add');
+Route::get('/Goods/goods_index','admin\Goods@goods_index');
+Route::get('/Goods/goods_del','admin\Goods@goods_del');
+Route::get('/Goods/goods_update','admin\Goods@goods_update');
+Route::post('/Goods/do1_update','admin\Goods@do1_update');
+
+
+
+

@@ -10,7 +10,7 @@
 		<td>添加时间</td>
 		<td>操作</td>
 	</tr>
-	@foreach($data as $v)
+	@foreach($stu_info as $v)
 	<tr>
 		<td>{{$v->id}}</td>
 		<td>{{$v->username}}</td>
@@ -22,4 +22,4 @@
 	</tr>
 	@endforeach
 </table>
-{{ $data->appends(['find_name'=>$find_name])->links() }}
+{{ $stu_info->appends(['find_name'=>$find_name])->links() }}
